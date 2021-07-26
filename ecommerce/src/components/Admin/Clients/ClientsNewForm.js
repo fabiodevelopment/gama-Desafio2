@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { makeStyles } from '@material-ui/core/styles';
+// import Alert from '@material-ui/lab/Alert';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
@@ -57,23 +58,25 @@ export default function ClientsNewForm(props) {
 		console.log('handleSubmit')
 		console.log(name);
 		console.log(email);
-		if(name === '' || email ==='' || telefone ===''|| cpf ==='' || endereco ==='' || complemento || cidade ==='' || estado ==='' ) {
+		if(name === '' || email === '' || telefone === '' || cpf === '' || cep === '' || endereco === '' || numero === '' || complemento === '' || bairro === '' || cidade === '' || estado === '' ) {
 			setErro(true);
 			setSuccess(false);
 		} else {
-			localStorage.setItem('listClients', JSON.stringify({
-				'Nome' 			: name,
-				'Email'			: email,
-				'Telefone'		: telefone,
+		localStorage.setItem(`listClients-${name}`, JSON.stringify({
+				'name' 			: name,
+				'email'			: email,
+				'telefone'		: telefone,
 				'cpf'			: cpf,
 				'cep'			: cep,
 				'endereco'		: endereco,
 				'numero'		: numero,
 				'complemento'	: complemento,
+				'bairro'		: bairro,
 				'cidade'		: cidade,
 				'estado'		: estado,
 				
 			}));
+			setSuccess(true);
 			setErro(false);
 			setName('');
 			setEmail('');
@@ -83,6 +86,7 @@ export default function ClientsNewForm(props) {
 			setEndereco('');
 			setNumero('');
 			setComplemento('');
+			setBairro('');
 			setCidade('');
 			setEstado('');
 		}
@@ -93,6 +97,8 @@ export default function ClientsNewForm(props) {
 			<CssBaseline />
 			<Container maxWidth="lg">
 				<form className={classes.root} noValidate autoComplete="off">
+					{ erro ? <div className="error" >Ocorreu um erro. Tente novamente.</div> : ''}
+					{ success ? <div className="success">E-mail Cadastrado com sucesso</div> : ''}
 					<TextField id="name" label="Nome completo" value={name} onChange={e => setName(e.target.value)} variant="outlined" />
 					<TextField id="email" label="Email" value={email} onChange={e => setEmail(e.target.value)} variant="outlined" />
 					<TextField id="telefone" label="Celular" value={telefone} onChange={e => setTelefone(e.target.value)} variant="outlined" />
@@ -105,8 +111,6 @@ export default function ClientsNewForm(props) {
 					<TextField id="cidade" label="Cidade" value={cidade} onChange={e => setCidade(e.target.value)} variant="outlined" />
 					<TextField id="estado" label="Estado" value={estado} onChange={e => setEstado(e.target.value)} variant="outlined" />
 					<Button onClick={handleSubmit} variant="contained" size="large" className={classes.btnCadastrar} color="primary">Cadastrar</Button>
-					{ erro ? <p className={classes.error} >Ocorreu um erro. Tente novamente.</p> : ''}
-					{ success ? <p className={classes.success} >E-mail Cadastrado com sucesso</p> : ''}
 				</form>
 			</Container>
 		</section>

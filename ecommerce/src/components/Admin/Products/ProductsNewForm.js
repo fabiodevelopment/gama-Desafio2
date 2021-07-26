@@ -22,16 +22,16 @@ const useStyles = makeStyles((theme) => ({
 		width: '92ch',
 		height: '54px',
 	},
-	error: {
-		color: 'red',
-		display: 'block',
-		width: '100%',
-	},
-	success: {
-		color: 'green',
-		display: 'block',
-		width: '100%',
-	}
+	// error: {
+	// 	color: 'red',
+	// 	display: 'block',
+	// 	width: '100%',
+	// },
+	// success: {
+	// 	color: 'green',
+	// 	display: 'block',
+	// 	width: '100%',
+	// }
 
 }));
 
@@ -51,12 +51,13 @@ export default function ProductsNewForm(props) {
 
 	function handleSubmit() {
 		console.log('handleSubmit')
-		if(name === '' || shortDescription ==='' || longDescription ==='' || quantity ==='' || price ==='' || category ==='' || brand ==='') {
+		if(name === '' || shortDescription === ''|| longDescription === ''|| quantity ==='' || price ==='' || category ==='' || brand ==='' || image === '' ) {
+			console.log('error or success');
 			setErro(true);
 			setSuccess(false);
 		} else {
-			localStorage.setItem('listProducts', JSON.stringify({
-				'Nome' 		        : name,
+			localStorage.setItem(`listProducts-${name}`, JSON.stringify({
+				'name' 		        : name,
                 'shortDescription'	: shortDescription,
                 'longDescription'	: longDescription,
 				'quantity'			: quantity,
@@ -66,6 +67,7 @@ export default function ProductsNewForm(props) {
 				'image'		        : image,
 				
 			}));
+			setSuccess(true);
 			setErro(false);
 			setName('');
 			setShortDescription('');
@@ -83,6 +85,8 @@ export default function ProductsNewForm(props) {
 			<CssBaseline />
 			<Container maxWidth="lg">
 				<form className={classes.root} noValidate autoComplete="off">
+					{ erro ? <div className="error" >Ocorreu um erro. Tente novamente.</div> : ''}
+					{ success ? <div className="success">E-mail Cadastrado com sucesso</div> : ''}
 					<TextField id="name" label="Nome do produto" value={name} onChange={e => setName(e.target.value)} variant="outlined" />
 					<TextField id="shortDescription" label="Descrição curta" value={shortDescription} onChange={e => setShortDescription(e.target.value)} variant="outlined" />
 					<TextField id="longDescription" label="Descrição Longa" value={longDescription} onChange={e => setLongDescription(e.target.value)} variant="outlined" />
@@ -92,8 +96,6 @@ export default function ProductsNewForm(props) {
 					<TextField id="brand" label="Marca" value={brand} onChange={e => setBrand(e.target.value)} variant="outlined" />
 					<TextField id="image" label="Url da imagem" value={image} onChange={e => setImage(e.target.value)} variant="outlined" />
 					<Button onClick={handleSubmit} variant="contained" size="large" className={classes.btnCadastrar} color="primary">Cadastrar</Button>
-					{ erro ? <p className={classes.error} >Ocorreu um erro. Tente novamente.</p> : ''}
-					{ success ? <p className={classes.success} >E-mail Cadastrado com sucesso</p> : ''}
 				</form>
 			</Container>
 		</section>
