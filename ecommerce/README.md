@@ -1,5 +1,5 @@
 # Programa Hiring Coders - Gama Academy
-### Desafio # 1 : Ecommerce - Landing page Black Friday para captura de Lead(email)
+### Desafio # 2 : Ecommerce ADMIN - Cadastro de Clientes e Produtos
 ## Tecnologias utilizadas:
 
 [Create React App] (https://github.com/facebook/create-react-app).
@@ -18,7 +18,7 @@
 
 ## Instalação:
 
-`git clone https://github.com/fabiodevelopment/gama-LP-Desafio1.git`
+`git clone https://github.com/fabiodevelopment/gama-LP-Desafio2.git`
 
 `yarn install` ou `npm install`
 
