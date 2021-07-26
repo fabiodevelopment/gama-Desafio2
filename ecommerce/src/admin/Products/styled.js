@@ -18,7 +18,7 @@ main {
 		nav {
 			max-width: 100%;
 		}
-		.navLink {
+		.navLink { 
 			color: black;
 			text-decoration: none;
 		}
