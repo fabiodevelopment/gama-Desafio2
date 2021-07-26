@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/static/js/main.4d5be3fb.chunk.js",
+    "main.js.map": "/static/js/main.4d5be3fb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.935dd2fa.js",
+    "runtime-main.js.map": "/static/js/runtime-main.935dd2fa.js.map",
+    "static/js/2.12e3354f.chunk.js": "/static/js/2.12e3354f.chunk.js",
+    "static/js/2.12e3354f.chunk.js.map": "/static/js/2.12e3354f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.12e3354f.chunk.js.LICENSE.txt": "/static/js/2.12e3354f.chunk.js.LICENSE.txt",
+    "static/media/bannerHero-desk.79e799d9.png": "/static/media/bannerHero-desk.79e799d9.png",
+    "static/media/bannerHero-desk2.7d39750b.png": "/static/media/bannerHero-desk2.7d39750b.png",
+    "static/media/bannerHero-mobile.bbc6450d.png": "/static/media/bannerHero-mobile.bbc6450d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.935dd2fa.js",
+    "static/js/2.12e3354f.chunk.js",
+    "static/js/main.4d5be3fb.chunk.js"
+  ]
+}
