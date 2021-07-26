@@ -6,9 +6,11 @@ export const DashMain = styled.div`
 		height: 100%;
 		align-items: stretch;
 		background-color: rgb(224, 224, 224);
+		@media(max-width: 1100px) {
+			flex-direction: column;
+		}
 	}
 	.dash--Sidebar {
-		/* height: calc(100vh - 70px); */
 		height: 100%;
 		align-items: stretch;
 		padding: 0;
@@ -18,6 +20,9 @@ export const DashMain = styled.div`
 		.navLink {
 			color: black;
 			text-decoration: none;
+		}
+		@media(max-width: 1100px) {
+			width: 100%;
 		}
 	}
 	.dash--Content {
@@ -30,6 +35,9 @@ export const DashMain = styled.div`
 			display: flex;
 			justify-content: space-between;
 		}
+		@media(max-width: 1100px) {
+			width: 100%;
+		}
 	}
-
+	
 `;
